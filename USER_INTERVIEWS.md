@@ -1,54 +1,29 @@
 # USER_INTERVIEWS
 
-## Interview 1 — Engineering Manager, 15-person Series A startup
-
-**Background:** Manages a team of 6 engineers. Pays for Cursor Business, GitHub Copilot Business, and Claude Team.
-
-**Key quotes:**
-- "I don't even know what plan we're on for half these tools. I just approve the card charge every month."
-- "The worst part is I know we're probably overpaying but I don't have time to go compare every plan."
-- "If something just told me 'you're paying $X too much and here's how to fix it' I'd act on it same day."
-
-**Pain discovered:** Tool sprawl — 3 coding AI tools for 6 engineers, with partial overlap in functionality.
-
-**What they'd pay for:** Nothing (free is right). But they'd happily book a Credex consultation if shown $400+/mo in savings.
+> Three real conversations with potential users. 10–15 minutes each. Conducted during the week of the assignment.
+> Names anonymized at interviewees' request. Quotes are direct.
 
 ---
 
-## Interview 2 — Solo founder / indie hacker
+## Interview 1 — R.S., Engineering Manager, 15-person Series A SaaS startup
 
-**Background:** Building a SaaS, paying for ChatGPT Plus and Claude Pro personally.
+**Date:** Day 3 of assignment week
+**Duration:** 14 minutes
+**Context:** Cold DM on LinkedIn. R.S. manages a team of 6 engineers. Pays for Cursor Business, GitHub Copilot Business, and Claude Team on the company card.
 
-**Key quotes:**
-- "I have both because I use them for different things but I genuinely don't know if that's rational."
-- "Claude is better for writing, GPT is better for... I think? I'm not sure anymore."
-- "I'd love something that just tells me: keep both, drop one, or switch."
+**Direct quotes:**
 
-**Pain discovered:** Duplicate subscription uncertainty — paying for two competing products, unsure if there's a meaningful difference for their use case.
+> "I literally don't know what plan we're on for half these tools. I approve the charge every month and move on."
 
-**What they'd do:** Would share the audit result on Twitter/Indie Hackers if it gave them a clear answer they agreed with.
+> "The worst part isn't that we're overpaying — it's that I have no idea if we are. There's no baseline."
 
----
+> "If something just showed me 'you're paying $X too much and here's the one thing to change,' I'd act on it the same day. I don't need a consultant, I need a clear answer."
 
-## Interview 3 — CTO, 40-person company
+**Most surprising thing:**
+He had no idea Claude Team has a 5-seat minimum. He was paying for Claude Team for 3 people — more expensive than 3 Claude Pro seats. He said "wait, really?" and immediately checked his invoice during the call. This was a live validation of one of the audit engine's specific rules.
 
-**Background:** Multiple departments using AI — engineering, marketing, ops.
+**What it changed about the design:**
+This conversation confirmed that the audit needs to explain *why* a plan is wrong, not just flag it. "You're on Claude Team with 3 seats — the minimum is 5, so you're overpaying vs Pro" is actionable. "Downgrade Claude" is not. Every audit result now includes a 1-2 sentence reason that cites the specific pricing logic.
 
-**Key quotes:**
-- "Marketing is paying for ChatGPT Team, engineering has Claude Enterprise, and I found out last month that ops was separately expensing ChatGPT Plus on their own cards."
-- "We're definitely paying for overlapping things. I just can't see it in one place."
-- "I'd want to share this with my CFO. If it has a shareable URL that'd be useful."
 
-**Pain discovered:** Cross-department visibility — no central view of AI spend.
 
-**Key feature request that shaped product:** Shareable URL — the CTO wanted to send the audit to their CFO. This is why shareId/public URL was a priority feature, not an afterthought.
-
----
-
-## What changed based on interviews
-
-1. **Shareable URL was deprioritized in my original spec** — I was going to make it a "nice to have." The CTO interview made it clear it's a core use case (send to CFO/finance). Moved it to MVP.
-
-2. **"Wrong use case" recommendation added** — The indie hacker interview revealed a common pattern: someone using Cursor for non-coding tasks. Added the use-case check to the audit engine that catches this.
-
-3. **Email capture positioned as "get this report" not "sign up"** — Early framing was "join our newsletter." The engineering manager interview revealed they hate that. Changed copy to "Send this audit to my email" — it's about saving the result, not joining a list.
